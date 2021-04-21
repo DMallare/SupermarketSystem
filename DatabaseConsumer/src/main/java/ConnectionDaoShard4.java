@@ -4,7 +4,7 @@ import com.zaxxer.hikari.HikariDataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public class ConnectionDao {
+public class ConnectionDaoShard4 {
     private static HikariConfig config = new HikariConfig();
     private static HikariDataSource ds;
     private static final String HOST_NAME = System.getProperty("MySQL_IP_ADDRESS");
@@ -30,10 +30,9 @@ public class ConnectionDao {
         ds = new HikariDataSource(config);
     }
 
-    private ConnectionDao() {}
+    private ConnectionDaoShard4() {}
 
     public static Connection getConnection() throws SQLException {
         return ds.getConnection();
     }
 }
-

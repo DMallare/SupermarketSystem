@@ -1,14 +1,17 @@
 import java.sql.*;
 
 public class PurchaseDao {
+    private Connection conn;
+
+    public PurchaseDao(Connection conn) {
+        this.conn = conn;
+    }
     public boolean createPurchase(Purchase newPurchase) {
-        Connection conn = null;
         PreparedStatement preparedStatement = null;
         String insertQueryStatement = "INSERT INTO Purchases (storeID, customerID, purchaseDate, items) " +
                 "VALUES (?,?,?,?)";
 
         try {
-            conn = ConnectionDao.getConnection();
             preparedStatement = conn.prepareStatement(insertQueryStatement);
             preparedStatement.setInt(1, newPurchase.getStoreID());
             preparedStatement.setInt(2, newPurchase.getCustomerID());
