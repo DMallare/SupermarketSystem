@@ -7,11 +7,11 @@ import java.sql.SQLException;
 public class ConnectionDaoShard1 {
     private static HikariConfig config = new HikariConfig();
     private static HikariDataSource ds;
-    private static final String HOST_NAME = System.getProperty("MySQL_IP_ADDRESS");
+    private static final String HOST_NAME = System.getProperty("MySQL_IP_ADDRESS1");
     private static final String PORT = System.getProperty("MySQL_PORT");
     private static final String DATABASE = System.getProperty("DATABASE");
-    private static final String USERNAME = System.getProperty("DB_USERNAME");
-    private static final String PASSWORD = System.getProperty("DB_PASSWORD");
+    private static final String USERNAME = System.getProperty("DB_USERNAME1");
+    private static final String PASSWORD = System.getProperty("DB_PASSWORD1");
 
     static {
         try {
