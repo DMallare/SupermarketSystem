@@ -1,11 +1,13 @@
-# Experiment 1
+# Results 2
+
+<p> Three Kafka brokers and one server </p>
 
 ## Instance Details
 
 | Service           | Instance Type   | AMI / Engine   |
 |:------------------|:----------------|:---------------|
 | Server            |  t2.micro       | Amazon Linux 2 |
-| Kafka             |  t2.medium      | Ubuntu 20.04   |
+| Kafka             |  t2.xLarge      | Ubuntu 20.04   |
 | Database Consumer |  t2.micro       | Amazon Linux 2 |
 | Store             |  t2.medium      | Amazon Linux 2 |
 | RDS               |  db.t2.micro    | MySQL Community|
@@ -19,10 +21,10 @@
 | Setting Type                                                        | Setting Value   |
 |:--------------------------------------------------------------------|:---------------:|
 | Number of Partitions                                                |  50             |
-| Number of brokers                                                   |  1              |
+| Number of brokers                                                   |  3              |
 | Consumer thread count                                               |  45             |
 | Consumer polling                                                    |  10 ms          |
-| Replication factor                                                  |  1              |
+| Replication factor                                                  |  3              |
 | linger.ms                                                           |  50             |
 | acks                                                                |  0              |
 | num threads Kafka server uses to receive requests                   |  3 (default)    |   
@@ -46,7 +48,7 @@ message has been sent.
 
 ## Results
 
-| Thread Count | Wall Time (s)  | Median Latency (ms) |  Mean Latency (ms) | Througput (requests/second) | 99th Percentile (ms) |
+| Thread Count | Wall Time (s)  | Median Latency (ms) |  Mean Latency (ms) | Throughput (requests/second) | 99th Percentile (ms) |
 |:-------------|:--------------:|:-----------------:|:------------------:|:-----------------------------:|:--------------------:|
-|  256         |  209.5         | 33.0              | 57.0               |  3299.3                       |   657.0              |
-|  512         |  367.0         | 35.0              | 106.1              |  3767.0                       |   1245.0             | 
+|  256         |  200.8         | 32.0              | 54.0               |  3441.7                       |   401.0              |
+|  512         |  400.9         | 39.0              | 113.0              |  3448.1                       |   1288.0             | 
