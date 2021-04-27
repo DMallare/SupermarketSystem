@@ -13,7 +13,7 @@ public class Publisher {
     private Publisher() {
         Properties props = new Properties();
         props.put("bootstrap.servers", KAFKA_HOST + ":" + KAFKA_PORT);
-        props.put("acks", DO_NOT_WAIT);
+        props.put("acks", WAIT_FOR_LEADER);
         props.put("retries", 0);
         props.put("linger.ms", 50);
         props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");

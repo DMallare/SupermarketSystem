@@ -96,12 +96,7 @@ public class PurchaseServlet extends HttpServlet {
         String message = new Gson().toJson(purchase);
         Publisher publisher = Publisher.getInstance();
         ProducerRecord<String, String> record = new ProducerRecord<>(TOPIC, message);
-        // int numBytes = message.getBytes("UTF-8").length;
-        // System.out.println("This message is " + numBytes + " bytes");
         publisher.getProducer().send(record);
-        // Future<RecordMetadata> future = publisher.getProducer().send(record);
-        // RecordMetadata metadata = future.get();
-        // System.out.println("Metadata? " + metadata);
     }
 
 
